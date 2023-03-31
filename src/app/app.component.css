@@ -1,0 +1,12 @@
+.bgForms{
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0.897) 0%, rgba(194,140,241,1) 30%, rgba(0, 183, 255, 0.842) 100%);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.cardReactiveForm{
+    border-color: #895DF2 !important;
+    border-width: 2px;
+}

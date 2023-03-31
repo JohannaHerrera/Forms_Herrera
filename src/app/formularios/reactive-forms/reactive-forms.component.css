@@ -1,0 +1,47 @@
+#titleForm{
+    margin-top: 20px;
+    text-align: center;
+    color: #262626;
+}
+
+#formExample{
+    margin-top: 40px;
+}
+
+#btnSubmit{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #7E3CF3;
+    border-color:  #7E3CF3;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#containerForm{
+    background-color: #C7B8FF;
+    height: 100%;
+}
+
+.divButton{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.is-invalid{
+    border-color: #E100A0 !important;
+}
+
+.invalid-feedback{
+    color: #E100A0 !important;
+}
+
+.form-label{
+    color: #3D3D3D !important;
+    font-weight: 500 !important;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 20px;
+}

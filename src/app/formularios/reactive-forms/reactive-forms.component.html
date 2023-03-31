@@ -1,0 +1,125 @@
+<div class="row">  
+    <div class="col-8">
+        <div class="card container" id="containerForm">
+            <div class="card-body">
+                <h1 id="titleForm">Formulario de Registro</h1>
+                <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="row g-3" id="formExample">
+                    <div class="col-md-6">
+                        <label for="inputFirstName" class="form-label">Nombre:</label>
+                        <input [formControl]="firstNameControl" [ngClass]="{'is-invalid' : FirstNameIsValid}" type="text"
+                            class="form-control" id="inputFirstName">
+                        <div *ngIf="FirstNameIsValid" class="form-text">Mínimo 3 caracteres.</div>
+                        <div *ngIf="FirstNameRequired" class="invalid-feedback">El nombre es requerido.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputLastName" class="form-label">Apellido:</label>
+                        <input [formControl]="lastNameControl" [ngClass]="{'is-invalid' : LastNameIsValid}" type="text"
+                            class="form-control" id="inputLastName">
+                        <div *ngIf="LastNameIsValid" class="form-text">Mínimo 3 caracteres.</div>
+                        <div *ngIf="LastNameRequired" class="invalid-feedback">El apellido es requerido.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCountry" class="form-label">País:</label>
+                        <input [formControl]="countryControl" [ngClass]="{'is-invalid' : CountryIsValid}" type="text" 
+                            class="form-control" id="inputCountry">
+                        <div *ngIf="CountryIsValid" class="form-text">Mínimo 4 caracteres.</div>
+                        <div *ngIf="CountryRequired" class="invalid-feedback">El país es requerido.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">Ciudad:</label>
+                        <input [formControl]="cityControl" [ngClass]="{'is-invalid' : CityIsValid}" type="text" 
+                            class="form-control" id="inputCity">
+                        <div *ngIf="CityIsValid" class="form-text">Mínimo 4 caracteres.</div>
+                        <div *ngIf="CityRequired" class="invalid-feedback">La ciudad es requerida.</div>
+                    </div>   
+                    <div class="col-md-6">
+                        <label for="inputEmail" class="form-label">Email:</label>
+                        <input [formControl]="emailControl" [ngClass]="{'is-invalid' : EmailIsValid}" type="text" 
+                            class="form-control" id="inputEmail">
+                        <div *ngIf="EmailIsValid" class="form-text">Correo no válido.</div>
+                        <div *ngIf="EmailRequired" class="invalid-feedback">El email es requerido.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword" class="form-label">Contraseña:</label>
+                        <input [formControl]="passwordControl" [ngClass]="{'is-invalid' : PasswordIsValid}" type="password" 
+                            class="form-control" id="inputPassword">
+                        <div *ngIf="PasswordIsValid" class="form-text">Mínimo 8 caracteres.</div>
+                        <div *ngIf="PasswordRequired" class="invalid-feedback">La contraseña es requerida.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputAddress" class="form-label">Dirección:</label>
+                        <input [formControl]="addressControl" [ngClass]="{'is-invalid' : AddressIsValid}" type="text" 
+                            class="form-control" id="inputAddress">
+                        <div *ngIf="AddressIsValid" class="form-text">Mínimo 4 caracteres.</div>
+                        <div *ngIf="AddressRequired" class="invalid-feedback">La dirección es requerida.</div>
+                    </div>
+                    <div class="col-12 divButton">
+                        <button type="submit" class="btn btn-primary" id="btnSubmit">Registrarse</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="row">
+            <div class="col-12">
+                <h3>JSON</h3>
+                <pre>
+                    {{ registerForm.value | json }}
+                </pre>
+            </div>          
+        </div>
+        <hr>
+        <div class="row">
+            <h3>ERRORES</h3>
+            <div class="col-6">               
+                <h6>Errores del nombre:</h6>
+                <pre>
+                    {{ firstNameControl.errors | json }} 
+                </pre>
+            </div>
+            <div class="col-6">
+                <h6>Errores del apellido:</h6>
+                <pre>
+                    {{ lastNameControl.errors | json }} 
+                </pre>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-6">               
+                <h6>Errores del país:</h6>
+                <pre>
+                    {{ countryControl.errors | json }} 
+                </pre>
+            </div>
+            <div class="col-6">
+                <h6>Errores de la ciudad:</h6>
+                <pre>
+                    {{ cityControl.errors | json }} 
+                </pre>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-6">               
+                <h6>Errores del correo:</h6>
+                <pre>
+                    {{ emailControl.errors | json }} 
+                </pre>
+            </div>
+            <div class="col-6">
+                <h6>Errores de la contraseña:</h6>
+                <pre>
+                    {{ passwordControl.errors | json }} 
+                </pre>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-12">               
+                <h6>Errores de la dirección:</h6>
+                <pre>
+                    {{ addressControl.errors | json }} 
+                </pre>
+            </div>
+        </div>         
+    </div>
+</div>
